@@ -1,5 +1,5 @@
 /**
- * vdeapps
+ * @copyright vdeapps
  *
  * vdeappsAddons
  * @description Manage vdeapps addons

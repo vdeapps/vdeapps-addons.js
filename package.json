@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/vdeapps/vdeappsAddons.js#readme",
   "dependencies": {
-    "es6-promise": "^4.2.4"
   },
   "devDependencies": {
     "babel": "^6.23.0",

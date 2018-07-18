@@ -6,6 +6,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+ * @copyright vdeapps
+ *
+ * vdeappsAddons
+ * @description Manage vdeapps addons
+ * @example var addons = new vdeappsAddons()
+ * addons.add( new helper(), 5);  // 5 is Position of loading for init, onReady and onUnload
+ * addons.helper.method();  // Call method of helper addon
+ */
 var vdeappsAddons = function () {
     function vdeappsAddons() {
         _classCallCheck(this, vdeappsAddons);
@@ -124,7 +133,9 @@ var vdeappsAddons = function () {
 }();
 
 /**
- * Abstract class for Addon vdeapps
+ * Abstract class for vdeappsAddons
+ *
+ * All new plugins must extends of vdeappsAddonAbstract
  */
 
 
