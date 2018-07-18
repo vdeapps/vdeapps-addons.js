@@ -1,5 +1,5 @@
 {
-  "name": "vdeappsaddons",
+  "name": "vdeapps-addons",
   "version": "1.0.1",
   "description": "Manage all vdeapps addons",
   "main": "vdeappsAddons.js",
