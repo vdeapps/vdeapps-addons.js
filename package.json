@@ -1,6 +1,6 @@
 {
   "name": "vdeappsaddons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage all vdeapps addons",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,7 @@
     "url": "https://github.com/vdeapps/vdeappsAddons.js/issues"
   },
   "homepage": "https://github.com/vdeapps/vdeappsAddons.js#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
