@@ -1,8 +1,8 @@
 {
-  "name": "vdeapps-addons",
+  "name": "vdeapps-addons.js",
   "version": "1.0.1",
   "description": "Manage all vdeapps addons",
-  "main": "vdeappsAddons.js",
+  "main": "vdeapps-addons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "gulp clean && gulp dev && gulp minify",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vdeapps/vdeappsAddons.js.git"
+    "url": "git+https://github.com/vdeapps/vdeapps-addons.js.git"
   },
   "keywords": [
     "vdeapps",
@@ -19,9 +19,9 @@
   "author": "vdeapps",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vdeapps/vdeappsAddons.js/issues"
+    "url": "https://github.com/vdeapps/vdeapps-addons.js/issues"
   },
-  "homepage": "https://github.com/vdeapps/vdeappsAddons.js#readme",
+  "homepage": "https://github.com/vdeapps/vdeapps-addons.js#readme",
   "dependencies": {},
   "devDependencies": {
     "babel": "^6.23.0",
