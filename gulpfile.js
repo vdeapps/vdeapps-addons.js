@@ -9,9 +9,6 @@ var sourcemaps = require("gulp-sourcemaps");
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
 
-require('es6-promise').polyfill();
-
-
 const autoprefixer = require('gulp-autoprefixer');
 
 /**
