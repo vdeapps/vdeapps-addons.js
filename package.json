@@ -2,7 +2,7 @@
   "name": "vdeappsaddons",
   "version": "1.0.1",
   "description": "Manage all vdeapps addons",
-  "main": "index.js",
+  "main": "vdeappsAddons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "gulp clean && gulp dev && gulp minify",
