@@ -22,7 +22,9 @@
     "url": "https://github.com/vdeapps/vdeapps-addons.js/issues"
   },
   "homepage": "https://github.com/vdeapps/vdeapps-addons.js#readme",
-  "dependencies": {},
+  "dependencies": {
+    "vdeapps-helper.js": "^1.0.6"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",

@@ -95,11 +95,6 @@ class vdeappsAddons {
                 console.info("Addon ok")
                 let name = vdeappsAddonObject.getName();
                 
-                // Test if already loaded
-                // if (typeof this[name] != undefined) {
-                //     return this;
-                // }
-                
                 // Assign addon
                 this[name] = vdeappsAddonObject;
                 
@@ -107,7 +102,7 @@ class vdeappsAddons {
                 this.addons[name] = true;
                 
                 // Order of object
-                this.addonsIndex[helper.str_pad(position, 3, '0', 'STR_PAD_LEFT') + '-' + name] = name;
+                this.addonsIndex[vdeappsHelper.str_pad(position, 3, '0', 'STR_PAD_LEFT') + '-' + name] = name;
             }
         }
         catch (error) {
