@@ -21,9 +21,12 @@ class vdeappsAddons {
             for (let i=0; i<nbAddon; i++){
                 let addon = addons[i];
                 
-                console.log(addon)
+                if (typeof addon.addon == undefined){
+                    addon.addon = 'Error';
+                    addon.order = 0;
+                }
                 
-                this.add(addon);
+                this.add(addon.addon, addon.order);
             }
         }
     }
