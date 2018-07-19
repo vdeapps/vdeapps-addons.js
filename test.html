@@ -1,0 +1,40 @@
+
+<!--
+  ~ Copyright AUXITEC TECHNOLOGIES (groupe Artélia)
+  -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Javascript Test Unit</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<h2>Test Unit</h2>
+
+<div id="mocha"></div>
+
+<script type="text/javascript" src="dist/js/vdeapps-addons.js"></script>
+
+<script>
+
+  var addons = new vdeappsAddons([
+      {
+          addon: 'addon1',
+          order: 5
+      },
+      {
+          addon: 'addon2',
+          order: 5
+      }
+  ]);
+
+  console.log(addons);
+
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -6,22 +6,38 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * @copyright vdeapps
- *
- * vdeappsAddons
- * @description Manage vdeapps addons
- * @example var addons = new vdeappsAddons()
- * addons.add( new helper(), 5);  // 5 is Position of loading for init, onReady and onUnload
- * addons.helper.method();  // Call method of helper addon
+/*
+ * Copyright vdeapps 2018
  */
 var vdeappsAddons = function () {
+
+    /**
+     * Constructor
+     * @param addons list of addons for init [{ addon: new addon(), order: 5 }, {...} ]
+     */
     function vdeappsAddons() {
+        var addons = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
         _classCallCheck(this, vdeappsAddons);
 
         this.vendor = 'vdeapps';
         this.addons = {};
         this.addonsIndex = {};
+
+        /**
+         * Test if there are addons to parameter
+         */
+        if (Object.prototype.toString.call(addons) === '[object Array]') {
+            var nbAddon = addons.length;
+
+            for (var i = 0; i < nbAddon; i++) {
+                var addon = addons[i];
+
+                console.log(addon);
+
+                this.add(addon);
+            }
+        }
     }
 
     /**
@@ -30,7 +46,7 @@ var vdeappsAddons = function () {
 
 
     _createClass(vdeappsAddons, [{
-        key: "init",
+        key: 'init',
         value: function init() {
             for (var name in this.addonsIndex) {
 
@@ -47,7 +63,7 @@ var vdeappsAddons = function () {
          */
 
     }, {
-        key: "onReady",
+        key: 'onReady',
         value: function onReady() {
 
             for (var name in this.addonsIndex) {
@@ -60,7 +76,7 @@ var vdeappsAddons = function () {
             }
         }
     }, {
-        key: "onUnload",
+        key: 'onUnload',
         value: function onUnload() {
             for (var name in this.addonsIndex) {
 
@@ -79,7 +95,7 @@ var vdeappsAddons = function () {
          */
 
     }, {
-        key: "add",
+        key: 'add',
         value: function add(vdeappsAddonObject) {
             var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
 
@@ -119,7 +135,7 @@ var vdeappsAddons = function () {
          */
 
     }, {
-        key: "get",
+        key: 'get',
         value: function get(addonName) {
             if (_typeof(this.addons[addonName]) != undefined) {
                 return this.addons[addonName];
@@ -151,17 +167,17 @@ var vdeappsAddonAbstract = function () {
     }
 
     _createClass(vdeappsAddonAbstract, [{
-        key: "getParentName",
+        key: 'getParentName',
         value: function getParentName() {
             return 'vdeappsAddonAbstract';
         }
     }, {
-        key: "setName",
+        key: 'setName',
         value: function setName(addonName) {
             this.name = addonName;
         }
     }, {
-        key: "getName",
+        key: 'getName',
         value: function getName() {
             return this.name;
         }
@@ -171,7 +187,7 @@ var vdeappsAddonAbstract = function () {
          */
 
     }, {
-        key: "init",
+        key: 'init',
         value: function init() {}
 
         /**
@@ -179,7 +195,7 @@ var vdeappsAddonAbstract = function () {
          */
 
     }, {
-        key: "onReady",
+        key: 'onReady',
         value: function onReady() {}
 
         /**
@@ -187,7 +203,7 @@ var vdeappsAddonAbstract = function () {
          */
 
     }, {
-        key: "onUnload",
+        key: 'onUnload',
         value: function onUnload() {}
     }]);
 

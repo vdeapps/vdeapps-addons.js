@@ -1,18 +1,31 @@
-/**
- * @copyright vdeapps
- *
- * vdeappsAddons
- * @description Manage vdeapps addons
- * @example var addons = new vdeappsAddons()
- * addons.add( new helper(), 5);  // 5 is Position of loading for init, onReady and onUnload
- * addons.helper.method();  // Call method of helper addon
+/*
+ * Copyright vdeapps 2018
  */
 class vdeappsAddons {
     
-    constructor() {
+    /**
+     * Constructor
+     * @param addons list of addons for init [{ addon: new addon(), order: 5 }, {...} ]
+     */
+    constructor(addons=null) {
         this.vendor = 'vdeapps';
         this.addons = {};
         this.addonsIndex = {};
+    
+        /**
+         * Test if there are addons to parameter
+         */
+        if (Object.prototype.toString.call(addons) === '[object Array]' ){
+            let nbAddon = addons.length;
+            
+            for (let i=0; i<nbAddon; i++){
+                let addon = addons[i];
+                
+                console.log(addon)
+                
+                this.add(addon);
+            }
+        }
     }
     
     /**
