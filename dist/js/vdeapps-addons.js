@@ -79,8 +79,8 @@ var vdeappsAddons = function () {
          */
 
     }, {
-        key: "addAddon",
-        value: function addAddon(vdeappsAddonObject) {
+        key: "add",
+        value: function add(vdeappsAddonObject) {
             var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
 
             console.info(vdeappsAddonObject);

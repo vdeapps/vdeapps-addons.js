@@ -70,7 +70,7 @@ class vdeappsAddons {
      * @param vdeappsAddonClass
      * @param position order of object
      */
-    addAddon(vdeappsAddonObject, position = 10) {
+    add(vdeappsAddonObject, position = 10) {
         console.info(vdeappsAddonObject);
         
         try {
