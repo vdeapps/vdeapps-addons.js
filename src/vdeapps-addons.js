@@ -7,21 +7,21 @@ class vdeappsAddons {
      * Constructor
      * @param addons list of addons for init [{ addon: new addon(), order: 5 }, {...} ]
      */
-    constructor(addons=null) {
+    constructor(addons = null) {
         this.vendor = 'vdeapps';
         this.addons = {};
         this.addonsIndex = {};
-    
+        
         /**
          * Test if there are addons to parameter
          */
-        if (Object.prototype.toString.call(addons) === '[object Array]' ){
+        if (Object.prototype.toString.call(addons) === '[object Array]') {
             let nbAddon = addons.length;
             
-            for (let i=0; i<nbAddon; i++){
+            for (let i = 0; i < nbAddon; i++) {
                 let addon = addons[i];
                 
-                if (typeof addon.addon == undefined){
+                if (typeof addon.addon == undefined) {
                     addon.addon = 'Error';
                     addon.order = 0;
                 }
@@ -35,15 +35,12 @@ class vdeappsAddons {
      * Init all Addons
      */
     init() {
-        for (let name in this.addonsIndex) {
-            
-            console.info("Run init: " + name)
-            
+        for (let ordername in this.addonsIndex) {
+            let name = this.addonsIndex[ordername];
             try {
                 this[name].init()
             }
             catch (error) {
-            
             }
         }
     }
@@ -52,31 +49,23 @@ class vdeappsAddons {
      * Run all ready when document is ready
      */
     onReady() {
-        
-        for (let name in this.addonsIndex) {
-            
-            console.info("Run init: " + name)
-            
+        for (let ordername in this.addonsIndex) {
+            let name = this.addonsIndex[ordername];
             try {
                 this[name].onReady()
             }
             catch (error) {
-            
             }
         }
-        
     }
     
     onUnload() {
-        for (let name in this.addonsIndex) {
-            
-            console.info("Run init: " + name)
-            
+        for (let ordername in this.addonsIndex) {
+            let name = this.addonsIndex[ordername];
             try {
                 this[name].onUnload()
             }
             catch (error) {
-            
             }
         }
     }
@@ -103,6 +92,9 @@ class vdeappsAddons {
                 
                 // Order of object
                 this.addonsIndex[vdeappsHelper.str_pad(position, 3, '0', 'STR_PAD_LEFT') + '-' + name] = name;
+    
+                // Run init() method
+                vdeappsAddonObject.init();
             }
         }
         catch (error) {

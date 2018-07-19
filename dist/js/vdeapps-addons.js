@@ -51,10 +51,8 @@ var vdeappsAddons = function () {
     _createClass(vdeappsAddons, [{
         key: 'init',
         value: function init() {
-            for (var name in this.addonsIndex) {
-
-                console.info("Run init: " + name);
-
+            for (var ordername in this.addonsIndex) {
+                var name = this.addonsIndex[ordername];
                 try {
                     this[name].init();
                 } catch (error) {}
@@ -68,11 +66,8 @@ var vdeappsAddons = function () {
     }, {
         key: 'onReady',
         value: function onReady() {
-
-            for (var name in this.addonsIndex) {
-
-                console.info("Run init: " + name);
-
+            for (var ordername in this.addonsIndex) {
+                var name = this.addonsIndex[ordername];
                 try {
                     this[name].onReady();
                 } catch (error) {}
@@ -81,10 +76,8 @@ var vdeappsAddons = function () {
     }, {
         key: 'onUnload',
         value: function onUnload() {
-            for (var name in this.addonsIndex) {
-
-                console.info("Run init: " + name);
-
+            for (var ordername in this.addonsIndex) {
+                var name = this.addonsIndex[ordername];
                 try {
                     this[name].onUnload();
                 } catch (error) {}
@@ -118,6 +111,9 @@ var vdeappsAddons = function () {
 
                     // Order of object
                     this.addonsIndex[vdeappsHelper.str_pad(position, 3, '0', 'STR_PAD_LEFT') + '-' + name] = name;
+
+                    // Run init() method
+                    vdeappsAddonObject.init();
                 }
             } catch (error) {
                 throw new Error("vdeappsAddonObject parameter is not from vdeappsAddonAbstract !");
