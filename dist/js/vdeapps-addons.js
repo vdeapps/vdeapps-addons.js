@@ -33,9 +33,12 @@ var vdeappsAddons = function () {
             for (var i = 0; i < nbAddon; i++) {
                 var addon = addons[i];
 
-                console.log(addon);
+                if (_typeof(addon.addon) == undefined) {
+                    addon.addon = 'Error';
+                    addon.order = 0;
+                }
 
-                this.add(addon);
+                this.add(addon.addon, addon.order);
             }
         }
     }
